@@ -23,7 +23,7 @@
             {
                 IConfiguration config = new ConfigurationBuilder()
                     .SetBasePath(System.IO.Directory.GetCurrentDirectory())
-                    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                     .Build();
 
                 IServiceProvider servicesProvider = BuildDi(config);
@@ -78,6 +78,9 @@
 
         private static IServiceProvider BuildDi(IConfiguration config)
         {
+            string connectionString = config.GetConnectionString("MyConnectionString");
+
+
             return new ServiceCollection()
                 .AddSingleton<IEmployeeManager, EmployeeManager>()
                 .AddTransient<IEmployeeDataLayer, EmployeeDataLayer>()

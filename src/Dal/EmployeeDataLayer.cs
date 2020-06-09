@@ -24,7 +24,8 @@ namespace GranadaCoder.OrganizationApp.Dal
         {
             get
             {
-                return new SqlConnection(this.config.GetConnectionString("MyConnectionString"));
+                string connectionString = this.config.GetConnectionString("MyConnectionString");
+                return new SqlConnection(connectionString);
             }
         }
 

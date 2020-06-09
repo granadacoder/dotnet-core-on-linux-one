@@ -5,8 +5,16 @@
     "tasks": [
         {
             "label": "build",
-            "command": "dotnet build",
+            "command": "dotnet",
             "type": "shell",
+            "args": [
+                "build",
+                "${workspaceFolder}/../ConsoleOne/GranadaCoder.OrganizaionApp.ConsoleOne.csproj",
+                // Ask dotnet build to generate full paths for file names.
+                "/property:GenerateFullPaths=true",
+                // Do not generate summary otherwise it leads to duplicate errors in Problems panel
+                "/consoleloggerparameters:NoSummary"
+            ],
             "group": "build",
             "presentation": {
                 "reveal": "silent"

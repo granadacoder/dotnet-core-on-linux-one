@@ -11,10 +11,9 @@
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/../ConsoleOne/bin/Debug/netcoreapp2.2/GranadaCoder.OrganizaionApp.ConsoleOne.dll",
             "args": [],
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/../ConsoleOne/bin/Debug/netcoreapp2.2",
             "stopAtEntry": false,
             "console": "externalTerminal"
         }
-
     ]
 }
